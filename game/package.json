@@ -1,15 +1,14 @@
 {
-  "name": "game",
+  "name": "slick-appearance",
   "version": "1.2.2",
   "author": "Fiordas",
   "repository": "git@github.com:fiordas/slick-appearance.git",
   "license": "MIT",
-  "type": "module",
   "scripts": {
     "build": "node delete_dist.js && esbuild src/client/index.ts --bundle --external:./node_modules/* --format=iife --minify --platform=node --outdir=dist",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "watch": "esbuild src/client/index.ts --bundle --external:./node_modules/* --format=iife --minify --platform=node --outdir=dist --watch"
+    "watch": "cross-env IS_WATCH_MODE=1 node build.js"
   },
   "devDependencies": {
     "@citizenfx/client": "^2.0.10044-1",
@@ -17,11 +16,14 @@
     "@types/node": "^14.14.22",
     "@typescript-eslint/eslint-plugin": "^4.14.0",
     "@typescript-eslint/parser": "^4.14.0",
-    "esbuild": "^0.24.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.4.5",
+    "esbuild": "^0.15.0",
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-prettier": "^3.3.1",
     "prettier": "^2.2.1",
+    "quake3-rcon": "^1.0.2",
     "typescript": "^4.1.3"
   }
 }
