@@ -16,10 +16,8 @@ export default defineConfig({
   plugins: [
     react(),
     {
-      name: 'run-script-on-change',
-      apply: 'serve',
-      handleHotUpdate({ file }) {
-        console.log(`${file} has changed. Restarting resource...`);
+      name: 'postbuild',
+      closeBundle: () => {
         rcon.send(`restart ${name}`, () => {
           console.log(`Resource ${name} restarted`);
         });

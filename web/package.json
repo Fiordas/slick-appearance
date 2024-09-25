@@ -18,7 +18,7 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "cross-env VITE_ENV=development vite",
+    "start": "cross-env VITE_ENV=development vite build --watch",
     "build": "cross-env VITE_ENV=production tsc && vite build",
     "build-game": "cross-env VITE_ENV=game tsc && vite build",
     "test": "react-scripts test",
